@@ -33,6 +33,12 @@
     <ClCompile Include="TestQuestions.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab1Form.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterClasses.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -45,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TestQuestions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab1Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -87,6 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="ClusterClasses.cpp" />
+    <ClCompile Include="Lab1Form.cpp" />
     <ClCompile Include="ParallelLabs.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -95,6 +97,9 @@
     <ClCompile Include="TestQuestions.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Lab1Form.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -108,9 +113,15 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Lab1Form.resx">
+      <DependentUpon>Lab1Form.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resX">
       <DependentUpon>MainForm.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TestQuestions.resx">
+      <DependentUpon>TestQuestions.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

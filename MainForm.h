@@ -44,10 +44,10 @@ namespace ParallelLabs {
 	private: System::Windows::Forms::RadioButton^  lab2radioButton;
 	private: System::Windows::Forms::RadioButton^  lab1radioButton;
 	private: System::Windows::Forms::StatusStrip^  statusStrip1;
-
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::ToolStripStatusLabel^  toolStripStatusLabel1;
 
+	private: int labNumber;
 	protected: 
 
 	private:
@@ -70,8 +70,8 @@ namespace ParallelLabs {
 			this->lab2radioButton = (gcnew System::Windows::Forms::RadioButton());
 			this->lab1radioButton = (gcnew System::Windows::Forms::RadioButton());
 			this->statusStrip1 = (gcnew System::Windows::Forms::StatusStrip());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->toolStripStatusLabel1 = (gcnew System::Windows::Forms::ToolStripStatusLabel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->labGroupBox->SuspendLayout();
 			this->statusStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -120,6 +120,7 @@ namespace ParallelLabs {
 			this->lab3radioButton->TabStop = true;
 			this->lab3radioButton->Text = L"№3 Механизмы организации взаимодействия параллельных процессов";
 			this->lab3radioButton->UseVisualStyleBackColor = true;
+			this->lab3radioButton->CheckedChanged += gcnew System::EventHandler(this, &MainForm::lab3radioButton_CheckedChanged);
 			// 
 			// lab2radioButton
 			// 
@@ -131,6 +132,7 @@ namespace ParallelLabs {
 			this->lab2radioButton->TabStop = true;
 			this->lab2radioButton->Text = L"№2 Изучение характеристик многопроцессорных вычислительных систем";
 			this->lab2radioButton->UseVisualStyleBackColor = true;
+			this->lab2radioButton->CheckedChanged += gcnew System::EventHandler(this, &MainForm::lab2radioButton_CheckedChanged);
 			// 
 			// lab1radioButton
 			// 
@@ -142,6 +144,7 @@ namespace ParallelLabs {
 			this->lab1radioButton->TabStop = true;
 			this->lab1radioButton->Text = L"№1 Выбор рациональной архитектуры многопроцессорной системы";
 			this->lab1radioButton->UseVisualStyleBackColor = true;
+			this->lab1radioButton->CheckedChanged += gcnew System::EventHandler(this, &MainForm::lab1radioButton_CheckedChanged);
 			// 
 			// statusStrip1
 			// 
@@ -152,6 +155,14 @@ namespace ParallelLabs {
 			this->statusStrip1->TabIndex = 4;
 			this->statusStrip1->Text = L"statusStrip1";
 			// 
+			// toolStripStatusLabel1
+			// 
+			this->toolStripStatusLabel1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F));
+			this->toolStripStatusLabel1->ImageAlign = System::Drawing::ContentAlignment::BottomRight;
+			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
+			this->toolStripStatusLabel1->Size = System::Drawing::Size(137, 17);
+			this->toolStripStatusLabel1->Text = L"МИФИ, кафедра 29, 2013";
+			// 
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(16, 187);
@@ -161,14 +172,6 @@ namespace ParallelLabs {
 			this->button1->Text = L"Далее ->";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MainForm::button1_Click);
-			// 
-			// toolStripStatusLabel1
-			// 
-			this->toolStripStatusLabel1->Font = (gcnew System::Drawing::Font(L"Segoe UI", 8.25F));
-			this->toolStripStatusLabel1->ImageAlign = System::Drawing::ContentAlignment::BottomRight;
-			this->toolStripStatusLabel1->Name = L"toolStripStatusLabel1";
-			this->toolStripStatusLabel1->Size = System::Drawing::Size(137, 17);
-			this->toolStripStatusLabel1->Text = L"МИФИ, кафедра 29, 2013";
 			// 
 			// MainForm
 			// 
@@ -193,7 +196,29 @@ namespace ParallelLabs {
 #pragma endregion
 
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			 gcnew TestQuestions();
+			 Form^ questionForm = gcnew TestQuestions(labNumber);
+
+			 //questionForm->Activate();
+			 questionForm->Show();
+
+		 }
+private: System::Void lab1radioButton_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+
+			 if (this->lab1radioButton->Checked)
+				labNumber = 1;
+
+		 }
+private: System::Void lab2radioButton_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+		 
+			 if (this->lab2radioButton->Checked)
+				labNumber = 2;
+		 
+		 }
+
+private: System::Void lab3radioButton_CheckedChanged(System::Object^  sender, System::EventArgs^  e) {
+
+			 if (this->lab3radioButton->Checked)
+				labNumber = 3;
 
 		 }
 };

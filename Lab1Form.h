@@ -10,28 +10,24 @@ namespace ParallelLabs {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for TestQuestions
+	/// Summary for Lab1Form
 	/// </summary>
-	public ref class TestQuestions : public System::Windows::Forms::Form
+	public ref class Lab1Form : public System::Windows::Forms::Form
 	{
 	public:
-		TestQuestions(int labNumber)
+		Lab1Form(void)
 		{
-			this->labNumber = labNumber;
-
-			InitializeComponent();			
+			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 		}
-	private: System::Windows::Forms::Label^  label1;
-	private: int labNumber;
 
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~TestQuestions()
+		~Lab1Form()
 		{
 			if (components)
 			{
@@ -52,29 +48,16 @@ namespace ParallelLabs {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(37, 20);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(35, 13);
-			this->label1->TabIndex = 0;
-			this->label1->Text = labNumber.ToString();
-			// 
-			// TestQuestions
+			// Lab1Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(284, 262);
-			this->Controls->Add(this->label1);
-			this->Name = L"TestQuestions";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
-			this->Text = L"TestQuestions";
+			this->ClientSize = System::Drawing::Size(611, 391);
+			this->Name = L"Lab1Form";
+			this->Text = L"Lab1Form";
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
